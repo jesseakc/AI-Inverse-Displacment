@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Displacement Theory: Why Knowledge Workers Face Automation First | Jesse Campbell</title>
+    <meta name="description" content="Discover Jesse Campbell's groundbreaking Inverse Displacement Theory explaining why AI will displace knowledge workers before manual laborers. Evidence-based analysis with real-world data.">
+    <meta name="keywords" content="ai displacement theory, inverse displacement theory, jesse campbell ai, knowledge worker automation, white collar ai impact">
+    <link rel="canonical" href="https://inversedisplacement.com/ai-displacement-theory/">
+    
+    <!-- Material Design -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --surface: #f8fafc;
+            --background: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --error: #ef4444;
+            --success: #10b981;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .brand-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-link, .cta-button {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .cta-button {
+            background: var(--accent);
+            font-weight: 500;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--surface), white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section:nth-child(even) {
+            background: var(--surface);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .quote {
+            background: var(--surface);
+            border-left: 4px solid var(--primary);
+            padding: 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.125rem;
+        }
+        
+        .quote cite {
+            display: block;
+            margin-top: 1rem;
+            font-style: normal;
+            color: var(--text-secondary);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .footer a {
+            color: #d1d5db;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 2rem; }
+            .nav-menu { display: none; }
+        }
+    </style>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["WebPage", "Article"],
+      "headline": "AI Displacement Theory: Why Knowledge Workers Face Automation First",
+      "description": "Discover Jesse Campbell's groundbreaking Inverse Displacement Theory explaining why AI will displace knowledge workers before manual laborers. Evidence-based analysis with real-world data.",
+      "author": {
+        "@type": "Person",
+        "name": "Jesse Campbell",
+        "url": "https://jessecampbell.ai",
+        "sameAs": [
+          "https://aiupskill.net",
+          "https://vibestl.ai",
+          "https://linkedin.com/in/jesse-campbell-idt"
+        ],
+        "jobTitle": "AI Expert & IDT Pioneer",
+        "description": "Leading researcher in AI displacement theory and future of work dynamics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Jesse Campbell AI Research",
+        "url": "https://inversedisplacement.com"
+      },
+      "mainEntity": {
+        "@type": "DefinedTerm",
+        "name": "Inverse Displacement Theory",
+        "description": "The proposition that AI will displace knowledge workers faster than manual laborers due to the ease of automating cognitive vs. physical tasks"
+      },
+      "datePublished": "2024-12-19",
+      "dateModified": "2024-12-19"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="brand-logo">Jesse Campbell</a>
+                <nav class="nav-menu">
+                    <a href="/ai-displacement-theory/" class="nav-link">Theory</a>
+                    <a href="/white-collar-ai-replacement/" class="nav-link">Industries</a>
+                    <a href="/ai-job-market-data/" class="nav-link">Data</a>
+                    <a href="/ai-career-transition/" class="nav-link">Careers</a>
+                    <a href="https://jessecampbell.ai" class="nav-link" target="_blank">About Jesse</a>
+                    <a href="https://aiupskill.net" class="cta-button" target="_blank">Learn AI Skills</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>AI Displacement Theory</h1>
+            <p>Why AI will displace knowledge workers before manual laborers - Jesse Campbell's groundbreaking research on the future of work</p>
+            <a href="#definition" class="btn btn-primary">Learn the Theory</a>
+            <a href="/ai-exposure-calculator/" class="btn btn-outline">Check Your Risk</a>
+        </div>
+    </section>
+
+    <!-- Theory Overview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Understanding Inverse Displacement Theory</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <span class="material-icons card-icon">psychology</span>
+                    <h3>Cognitive vs Physical Tasks</h3>
+                    <p>AI excels at cognitive tasks like analysis, writing, and decision-making - the core functions of knowledge work. Physical tasks remain challenging due to dexterity and environmental complexity.</p>
+                </div>
+                <div class="card">
+                    <span class="material-icons card-icon">speed</span>
+                    <h3>Deployment Speed</h3>
+                    <p>Software-based AI can scale globally overnight, while physical automation requires hardware deployment and infrastructure changes.</p>
+                </div>
+                <div class="card">
+                    <span class="material-icons card-icon">attach_money</span>
+                    <h3>Economic Incentives</h3>
+                    <p>Higher ROI from automating expensive knowledge work compared to lower-wage manual labor.</p>
+                </div>
+                <div class="card">
+                    <span class="material-icons card-icon">trending_up</span>
+                    <h3>Statistical Evidence</h3>
+                    <p>30% of white-collar tasks are AI-exposed vs. <1% of blue-collar tasks, according to Pearson research.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Statistics -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">The Numbers Tell the Story</h2>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">30%</span>
+                    <span class="stat-label">White-collar tasks AI can perform</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number"><1%</span>
+                    <span class="stat-label">Blue-collar tasks AI can perform</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">27%</span>
+                    <span class="stat-label">College-educated workers in high-exposure jobs</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">12%</span>
+                    <span class="stat-label">High school-only workers in high-exposure jobs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jesse Campbell Quote -->
+    <section class="section">
+        <div class="container">
+            <div class="quote">
+                "We've been looking at the automation horizon through the wrong end of the telescope. The real story isn't just about robots on assembly lines; it's about algorithms quietly mastering the core functions of the professional class. This is the Inverse Displacement."
+                <cite>— Jesse Campbell, AI Expert & IDT Pioneer</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Impact Preview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Industries Already Feeling the Impact</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <span class="material-icons card-icon">code</span>
+                    <h3>Software Engineering</h3>
+                    <p>GitHub Copilot writing 30% of new code. Teams shrinking from 10 to 3 developers.</p>
+                    <a href="/ai-software-engineer-jobs/" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="card">
+                    <span class="material-icons card-icon">gavel</span>
+                    <h3>Legal Profession</h3>
+                    <p>AI legal memo generation matching first-year associate quality.</p>
+                    <a href="/ai-legal-profession-impact/" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="card">
+                    <span class="material-icons card-icon">trending_down</span>
+                    <h3>Finance</h3>
+                    <p>Excel modeling automated. Junior analyst roles disappearing.</p>
+                    <a href="/ai-finance-jobs-automation/" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">What This Means for You</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Assess Your Risk</h3>
+                    <p>Use our interactive calculator to understand your AI exposure level and get personalized recommendations.</p>
+                    <a href="/ai-exposure-calculator/" class="btn btn-secondary">Calculate Risk</a>
+                </div>
+                <div class="card">
+                    <h3>Prepare for Transition</h3>
+                    <p>Learn the skills that will keep you competitive in an AI-driven economy with expert guidance.</p>
+                    <a href="https://aiupskill.net" class="btn btn-primary" target="_blank">Start Learning</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>About Jesse Campbell</h3>
+                    <p>Leading AI expert and pioneer of Inverse Displacement Theory. <a href="https://jessecampbell.ai">Learn more about Jesse's research</a>.</p>
+                </div>
+                <div>
+                    <h3>AI Learning Resources</h3>
+                    <p>Master AI-resistant skills with <a href="https://aiupskill.net">AIUpskill.net's expert training programs</a>.</p>
+                </div>
+                <div>
+                    <h3>Local Community</h3>
+                    <p>Join <a href="https://vibestl.ai">VibeSTL.ai</a> for St. Louis AI networking and events.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #4b5563;">
+                <p>&copy; 2024 Jesse Campbell - AI Expert & IDT Pioneer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

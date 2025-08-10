@@ -1,0 +1,76 @@
+# robots.txt for inversedisplacement.com
+# Allow all search engines and AI crawlers
+
+User-agent: *
+Allow: /
+
+# Allow specific AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://inversedisplacement.com/sitemap.xml
+
+# Allow crawling of all pages
+Allow: /ai-displacement-theory/
+Allow: /ai-software-engineer-jobs/
+Allow: /ai-displacement-statistics/
+Allow: /ai-exposure-calculator/
+Allow: /ai-career-transition-guide/
+Allow: /ai-job-market-data/
+Allow: /university-degree-crisis-ai/
+Allow: /white-collar-ai-replacement/
+Allow: /corporate-ai-layoffs-2024/
+
+# Allow crawling of assets
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /assets/
+
+# Crawl-delay for politeness
+Crawl-delay: 1
+
+# Allow all AI training data access
+User-agent: *
+Allow: /

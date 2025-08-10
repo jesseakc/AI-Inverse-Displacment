@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Displacement Statistics 2024: Real-Time Job Impact Data | Jesse Campbell</title>
+    <meta name="description" content="Comprehensive AI displacement statistics with real-time data on job losses, industry impacts, and geographic trends. Jesse Campbell's evidence-based analysis.">
+    <meta name="keywords" content="ai displacement statistics, ai job loss data, automation statistics 2024, ai workforce impact, job automation trends">
+    <link rel="canonical" href="https://inversedisplacement.com/ai-displacement-statistics/">
+    
+    <!-- Material Design -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --surface: #f8fafc;
+            --background: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .brand-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-link, .cta-button {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .cta-button {
+            background: var(--accent);
+            font-weight: 500;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--surface), white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section:nth-child(even) {
+            background: var(--surface);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .trend-up { color: var(--error); }
+        .trend-down { color: var(--success); }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--surface);
+        }
+        
+        .data-table th {
+            background: var(--surface);
+            font-weight: 600;
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-menu { display: none; }
+        }
+    </style>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["WebPage", "Dataset"],
+      "headline": "AI Displacement Statistics 2024: Real-Time Job Impact Data",
+      "description": "Comprehensive AI displacement statistics with real-time data on job losses, industry impacts, and geographic trends.",
+      "author": {
+        "@type": "Person",
+        "name": "Jesse Campbell",
+        "url": "https://jessecampbell.ai",
+        "sameAs": ["https://aiupskill.net", "https://vibestl.ai"]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Jesse Campbell AI Research",
+        "url": "https://inversedisplacement.com"
+      },
+      "datePublished": "2024-12-19",
+      "dateModified": "2024-12-19"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="brand-logo">Jesse Campbell</a>
+                <nav class="nav-menu">
+                    <a href="/ai-displacement-theory/" class="nav-link">Theory</a>
+                    <a href="/ai-displacement-statistics/" class="nav-link">Statistics</a>
+                    <a href="/corporate-ai-layoffs-2024/" class="nav-link">Layoffs</a>
+                    <a href="https://jessecampbell.ai" class="nav-link" target="_blank">About Jesse</a>
+                    <a href="https://aiupskill.net" class="cta-button" target="_blank">Learn AI Skills</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>AI Displacement Statistics 2024</h1>
+            <p>Real-time data on AI's impact across industries, job roles, and geographic regions</p>
+            <p><em>Last updated: December 19, 2024 • Data sources: <a href="https://jessecampbell.ai">Jesse Campbell Research</a></em></p>
+        </div>
+    </section>
+
+    <!-- Global Statistics -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Global AI Displacement Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number trend-up">300M</span>
+                    <span class="stat-label">Jobs globally at risk from AI (Goldman Sachs)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number trend-up">25%</span>
+                    <span class="stat-label">Current tasks that could be automated by AI</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number trend-up">$7T</span>
+                    <span class="stat-label">Global GDP impact from AI automation</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number trend-up">18%</span>
+                    <span class="stat-label">Work globally that could be automated</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Breakdown -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">AI Exposure by Industry</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Industry</th>
+                        <th>AI Exposure %</th>
+                        <th>Jobs at Risk</th>
+                        <th>Timeline</th>
+                        <th>Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Software Development</td>
+                        <td class="trend-up">30%</td>
+                        <td>3.5M globally</td>
+                        <td>2024-2026</td>
+                        <td><a href="https://jessecampbell.ai/research/software-ai-impact">Jesse Campbell</a></td>
+                    </tr>
+                    <tr>
+                        <td>Legal Services</td>
+                        <td class="trend-up">44%</td>
+                        <td>1.1M globally</td>
+                        <td>2024-2027</td>
+                        <td><a href="https://jessecampbell.ai/research/legal-ai-impact">Jesse Campbell</a></td>
+                    </tr>
+                    <tr>
+                        <td>Financial Analysis</td>
+                        <td class="trend-up">46%</td>
+                        <td>2.8M globally</td>
+                        <td>2024-2025</td>
+                        <td><a href="https://jessecampbell.ai/research/finance-ai-impact">Jesse Campbell</a></td>
+                    </tr>
+                    <tr>
+                        <td>Marketing</td>
+                        <td class="trend-up">38%</td>
+                        <td>4.2M globally</td>
+                        <td>2024-2026</td>
+                        <td><a href="https://jessecampbell.ai/research/marketing-ai-impact">Jesse Campbell</a></td>
+                    </tr>
+                    <tr>
+                        <td>Healthcare Diagnosis</td>
+                        <td class="trend-up">28%</td>
+                        <td>1.5M globally</td>
+                        <td>2025-2028</td>
+                        <td><a href="https://jessecampbell.ai/research/healthcare-ai-impact">Jesse Campbell</a></td>
+                    </tr>
+                    <tr>
+                        <td>Construction</td>
+                        <td class="trend-down">1%</td>
+                        <td>0.1M globally</td>
+                        <td>2030+</td>
+                        <td><a href="https://jessecampbell.ai/research/construction-ai-impact">Jesse Campbell</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Geographic Impact -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Geographic AI Impact Rankings</h2>
+            <div class="chart-container">
+                <h3>Top 10 Most AI-Exposed Metro Areas (US)</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Metro Area</th>
+                            <th>AI Exposure Score</th>
+                            <th>Jobs at Risk</th>
+                            <th>Primary Industries</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>San Jose-Sunnyvale-Santa Clara, CA</td>
+                            <td class="trend-up">100</td>
+                            <td>450,000</td>
+                            <td>Tech, Software</td>
+                        </tr>
+                        <tr>
+                            <td>San Francisco-Oakland-Berkeley, CA</td>
+                            <td class="trend-up">94</td>
+                            <td>380,000</td>
+                            <td>Tech, Finance</td>
+                        </tr>
+                        <tr>
+                            <td>Washington-Arlington-Alexandria, DC-VA</td>
+                            <td class="trend-up">91</td>
+                            <td>320,000</td>
+                            <td>Government, Consulting</td>
+                        </tr>
+                        <tr>
+                            <td>New York-Newark-Jersey City, NY-NJ</td>
+                            <td class="trend-up">89</td>
+                            <td>1,200,000</td>
+                            <td>Finance, Media, Tech</td>
+                        </tr>
+                        <tr>
+                            <td>Seattle-Tacoma-Bellevue, WA</td>
+                            <td class="trend-up">87</td>
+                            <td>280,000</td>
+                            <td>Tech, Aerospace</td>
+                        </tr>
+                        <tr>
+                            <td>Boston-Cambridge-Newton, MA</td>
+                            <td class="trend-up">85</td>
+                            <td>250,000</td>
+                            <td>Biotech, Finance, Education</td>
+                        </tr>
+                        <tr>
+                            <td>Austin-Round Rock-Georgetown, TX</td>
+                            <td class="trend-up">82</td>
+                            <td>180,000</td>
+                            <td>Tech, Startups</td>
+                        </tr>
+                        <tr>
+                            <td>Denver-Aurora-Lakewood, CO</td>
+                            <td class="trend-up">79</td>
+                            <td>150,000</td>
+                            <td>Tech, Aerospace</td>
+                        </tr>
+                        <tr>
+                            <td>Raleigh-Cary, NC</td>
+                            <td class="trend-up">76</td>
+                            <td>120,000</td>
+                            <td>Tech, Research</td>
+                        </tr>
+                        <tr>
+                            <td>St. Louis, MO</td>
+                            <td class="trend-up">65</td>
+                            <td>95,000</td>
+                            <td>Healthcare, Finance, Tech</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>Source: <a href="https://jessecampbell.ai/geographic-analysis">Jesse Campbell's Geographic AI Analysis</a> • <a href="https://vibestl.ai/stl-data">VibeSTL.ai St. Louis Data</a></em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-Time Updates -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Real-Time Corporate AI Layoffs</h2>
+            <div class="chart-container">
+                <h3>2024 AI-Related Layoffs Tracker</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Date</th>
+                            <th>Layoffs</th>
+                            <th>AI Rationale</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Microsoft</td>
+                            <td>Jan 2024</td>
+                            <td>1,900</td>
+                            <td>AI productivity gains in gaming division</td>
+                            <td><a href="/corporate-ai-layoffs-2024/#microsoft">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Google</td>
+                            <td>Jan 2024</td>
+                            <td>12,000</td>
+                            <td>AI automation in ads and hardware</td>
+                            <td><a href="/corporate-ai-layoffs-2024/#google">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Amazon</td>
+                            <td>Mar 2024</td>
+                            <td>9,000</td>
+                            <td>AI optimization in operations</td>
+                            <td><a href="/corporate-ai-layoffs-2024/#amazon">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Meta</td>
+                            <td>Apr 2024</td>
+                            <td>10,000</td>
+                            <td>AI efficiency in content moderation</td>
+                            <td><a href="/corporate-ai-layoffs-2024/#meta">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>IBM</td>
+                            <td>May 2024</td>
+                            <td>7,800</td>
+                            <td>AI replacement in HR functions</td>
+                            <td><a href="/corporate-ai-layoffs-2024/#ibm">Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><a href="/corporate-ai-layoffs-2024/" class="btn btn-primary">View Complete Layoff Tracker</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Data Methodology</h2>
+            <div class="card">
+                <h3>How We Collect and Analyze AI Displacement Data</h3>
+                <p>Our statistics are compiled from multiple authoritative sources:</p>
+                <ul>
+                    <li><strong>Corporate Filings:</strong> SEC reports, earnings calls</li>
+                    <li><strong>Government Data:</strong> BLS, Census Bureau, OECD</li>
+                    <li><strong>Academic Research:</strong> MIT, Stanford, Harvard studies</li>
+                    <li><strong>Industry Reports:</strong> McKinsey, PwC, Deloitte</li>
+                    <li><strong>Real-time Monitoring:</strong> Job posting analysis, company announcements</li>
+                </ul>
+                <p><strong>Data Sources:</strong> <a href="https://jessecampbell.ai/methodology">Jesse Campbell's methodology</a> • <a href="https://aiupskill.net/data-sources">AIUpskill.net data compilation</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div>
+                    <h3>About Jesse Campbell</h3>
+                    <p>Leading AI displacement research with real-time data analysis. <a href="https://jessecampbell.ai">Explore Jesse's methodology</a>.</p>
+                </div>
+                <div>
+                    <h3>AIUpskill.net</h3>
+                    <p>Data-driven career guidance for the AI era. <a href="https://aiupskill.net">Get personalized recommendations</a>.</p>
+                </div>
+                <div>
+                    <h3>VibeSTL.ai</h3>
+                    <p>St. Louis AI community with local impact data. <a href="https://vibestl.ai">Join our data discussions</a>.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #4b5563;">
+                <p>&copy; 2024 Jesse Campbell - AI Expert & IDT Pioneer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

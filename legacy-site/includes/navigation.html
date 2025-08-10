@@ -1,0 +1,55 @@
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="/">
+                <span itemprop="name">Jesse Campbell AI Expert</span>
+            </a>
+            <meta itemprop="position" content="1" />
+        </li>
+        {{BREADCRUMB_ITEMS}}
+    </ol>
+</nav>
+
+<style>
+    .breadcrumb-nav {
+        background: var(--surface);
+        padding: 1rem 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .breadcrumb-list {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 0.5rem;
+    }
+    
+    .breadcrumb-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .breadcrumb-item:not(:last-child)::after {
+        content: '>';
+        margin: 0 0.5rem;
+        color: var(--text-secondary);
+    }
+    
+    .breadcrumb-item a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .breadcrumb-item a:hover {
+        text-decoration: underline;
+    }
+    
+    .breadcrumb-item:last-child {
+        color: var(--text-secondary);
+    }
+</style>

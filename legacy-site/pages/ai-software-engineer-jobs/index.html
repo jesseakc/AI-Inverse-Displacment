@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Impact on Software Engineers: Jobs, Salaries, Future Outlook 2024 | Jesse Campbell</title>
+    <meta name="description" content="Comprehensive analysis of how AI is transforming software engineering jobs. GitHub Copilot impact, productivity gains, salary changes, and career strategies from Jesse Campbell.">
+    <meta name="keywords" content="ai software engineer jobs, github copilot impact, developer productivity ai, software engineering automation, ai coding tools">
+    <link rel="canonical" href="https://inversedisplacement.com/ai-software-engineer-jobs/">
+    
+    <!-- Material Design -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --surface: #f8fafc;
+            --background: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .brand-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-link, .cta-button {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .cta-button {
+            background: var(--accent);
+            font-weight: 500;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--surface), white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section:nth-child(even) {
+            background: var(--surface);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, var(--accent) 0%, var(--accent) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+        }
+        
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-menu { display: none; }
+        }
+    </style>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["WebPage", "Article"],
+      "headline": "AI Impact on Software Engineers: Jobs, Salaries, Future Outlook 2024",
+      "description": "Comprehensive analysis of how AI is transforming software engineering jobs. GitHub Copilot impact, productivity gains, salary changes, and career strategies.",
+      "author": {
+        "@type": "Person",
+        "name": "Jesse Campbell",
+        "url": "https://jessecampbell.ai",
+        "sameAs": ["https://aiupskill.net", "https://vibestl.ai"]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Jesse Campbell AI Research",
+        "url": "https://inversedisplacement.com"
+      },
+      "datePublished": "2024-12-19",
+      "dateModified": "2024-12-19"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="brand-logo">Jesse Campbell</a>
+                <nav class="nav-menu">
+                    <a href="/ai-displacement-theory/" class="nav-link">Theory</a>
+                    <a href="/ai-software-engineer-jobs/" class="nav-link">Software Jobs</a>
+                    <a href="/ai-job-market-data/" class="nav-link">Market Data</a>
+                    <a href="https://jessecampbell.ai" class="nav-link" target="_blank">About Jesse</a>
+                    <a href="https://aiupskill.net" class="cta-button" target="_blank">Learn AI Skills</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>AI Impact on Software Engineers</h1>
+            <p>How GitHub Copilot and AI coding tools are transforming developer productivity, team structures, and career trajectories</p>
+            <a href="#impact" class="btn btn-primary">See the Data</a>
+        </div>
+    </section>
+
+    <!-- Key Statistics -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">The Numbers Don't Lie</h2>
+            <div class="grid grid-2">
+                <div class="stat-card">
+                    <span class="stat-number">30%</span>
+                    <span class="stat-label">of new code written by AI (GitHub Copilot)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">55%</span>
+                    <span class="stat-label">faster development with AI tools</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">70%</span>
+                    <span class="stat-label">of developers report improved productivity</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3x</span>
+                    <span class="stat-label">smaller teams needed for same output</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline of Impact -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Timeline of AI's Impact on Software Engineering</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>2021: GitHub Copilot Launch</h3>
+                    <p>AI pair programming becomes mainstream. Early adopters see 30-50% productivity gains.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2022: Productivity Surge</h3>
+                    <p>Microsoft reports 30% of their new code is AI-generated. Teams begin restructuring.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2023: Team Restructuring</h3>
+                    <p>Companies like Shopify and Google reduce team sizes while maintaining output.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2024: Entry-Level Crisis</h3>
+                    <p>Junior developer roles decline as AI handles basic coding tasks. <a href="https://jessecampbell.ai/research/junior-developer-crisis">Jesse Campbell's analysis</a> shows 40% reduction in entry-level hiring.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2025: New Paradigm</h3>
+                    <p>Focus shifts to AI-augmented senior developers. <a href="https://aiupskill.net/ai-developer-skills">AIUpskill.net's training programs</a> adapt to new requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Impact -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How AI is Changing Software Development Today</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>🚀 Productivity Gains</h3>
+                    <ul>
+                        <li><strong>55% faster</strong> code completion (GitHub study)</li>
+                        <li><strong>40% fewer bugs</strong> in AI-assisted code</li>
+                        <li><strong>70% of developers</strong> report improved job satisfaction</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>⚠️ Job Market Changes</h3>
+                    <ul>
+                        <li><strong>30% reduction</strong> in junior developer postings</li>
+                        <li><strong>2-3x salary premium</strong> for AI-augmented seniors</li>
+                        <li><strong>New roles emerging:</strong> AI code reviewers, prompt engineers</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🏢 Corporate Restructuring</h3>
+                    <ul>
+                        <li><strong>Microsoft:</strong> 30% AI-generated code, reduced team sizes</li>
+                        <li><strong>Google:</strong> AI-first development processes</li>
+                        <li><strong>Startups:</strong> 3-person teams doing work of 10</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🎯 Skills Evolution</h3>
+                    <ul>
+                        <li><strong>Prompt engineering</strong> becomes essential</li>
+                        <li><strong>Code review</strong> skills more valuable than writing</li>
+                        <li><strong>System architecture</strong> expertise in high demand</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salary Impact -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Salary Impact by Experience Level</h2>
+            <div class="card">
+                <h3>Current Market Trends (2024)</h3>
+                <p><strong>Junior Developers (0-2 years):</strong> 25% salary reduction due to AI competition</p>
+                <p><strong>Mid-level Developers (3-5 years):</strong> Stable salaries, but 40% fewer positions</p>
+                <p><strong>Senior Developers (5+ years):</strong> 50% salary increase for AI-augmented skills</p>
+                <p><strong>AI Specialists:</strong> 200% premium over traditional developers</p>
+                
+                <p><em>Data from <a href="https://jessecampbell.ai/salary-surveys/developer-ai-2024">Jesse Campbell's 2024 Developer Salary Survey</a> and <a href="https://aiupskill.net/salary-data">AIUpskill.net market analysis</a>.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Strategies -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Future-Proof Your Software Career</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>🎯 Immediate Actions</h3>
+                    <ol>
+                        <li><strong>Master AI tools:</strong> GitHub Copilot, ChatGPT, Claude</li>
+                        <li><strong>Focus on architecture:</strong> System design over implementation</li>
+                        <li><strong>Develop AI skills:</strong> Prompt engineering, model evaluation</li>
+                        <li><strong>Build portfolio:</strong> AI-augmented projects</li>
+                    </ol>
+                </div>
+                <div class="card">
+                    <h3>🚀 Long-term Strategy</h3>
+                    <ol>
+                        <li><strong>Specialize in AI integration:</strong> Become the bridge between AI and business</li>
+                        <li><strong>Develop domain expertise:</strong> Industry-specific AI applications</li>
+                        <li><strong>Build AI products:</strong> Create tools that leverage AI for others</li>
+                        <li><strong>Join communities:</strong> <a href="https://vibestl.ai">VibeSTL.ai</a> for local networking</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container">
+            <div class="card" style="text-align: center;">
+                <h2>Ready to Adapt?</h2>
+                <p>Don't wait for the AI revolution to pass you by. Start building AI-augmented skills today.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="/ai-career-transition-guide/" class="btn btn-primary">Get Transition Guide</a>
+                    <a href="https://aiupskill.net" class="btn btn-secondary" target="_blank">Start AI Training</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div>
+                    <h3>About Jesse Campbell</h3>
+                    <p>Leading research on AI's impact on software development. <a href="https://jessecampbell.ai">Explore Jesse's latest insights</a>.</p>
+                </div>
+                <div>
+                    <h3>AIUpskill.net</h3>
+                    <p>Master AI-augmented development skills. <a href="https://aiupskill.net">Start your AI developer journey</a>.</p>
+                </div>
+                <div>
+                    <h3>VibeSTL.ai</h3>
+                    <p>Connect with St. Louis AI developers. <a href="https://vibestl.ai">Join our local AI community</a>.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #4b5563;">
+                <p>&copy; 2024 Jesse Campbell - AI Expert & IDT Pioneer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
