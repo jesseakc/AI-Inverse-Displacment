@@ -2,6 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  // Existing metadata remains unchanged
+
   title: 'AI Displacement Theory: Why Knowledge Workers Face Automation First | Jesse Campbell',
   description: 'Discover Jesse Campbell\'s groundbreaking Inverse Displacement Theory explaining why AI will displace knowledge workers before manual laborers. Evidence-based analysis with real-world data.',
   keywords: 'ai displacement theory, inverse displacement theory, jesse campbell ai, knowledge worker automation, white collar ai impact',
@@ -9,6 +11,9 @@ export const metadata: Metadata = {
     canonical: 'https://inversedisplacement.com/ai-displacement-theory/',
   },
 };
+
+import { createArticleSchema, createBreadcrumbSchema } from '@/lib/schema';
+import StructuredData from '@/components/StructuredData';
 
 export default function AiDisplacementTheory() {
   return (
@@ -131,7 +136,15 @@ export default function AiDisplacementTheory() {
             </div>
           </div>
         </div>
-      </section>
-    </>
-  );
+</section>
+        <StructuredData data={createArticleSchema(
+          "AI Displacement Theory",
+          "Understanding why AI will disrupt knowledge work before manual labor.",
+          "https://inversedisplacement.com/ai-displacement-theory/",
+          undefined,
+          "Jesse Campbell",
+          "2024-12-19",
+          "2024-12-19"
+        )} />
+     </>  );
 }

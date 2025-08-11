@@ -102,7 +102,7 @@ export default function AiSoftwareEngineerJobs() {
               <ul>
                 <li><strong>Microsoft:</strong> 30% AI-generated code, reduced team sizes</li>
                 <li><strong>Google:</strong> AI-first development processes</li>
-                <li><strong>Startups:</b> 3-person teams doing work of 10</li>
+                <li><strong>Startups:</strong> 3-person teams doing work of 10</li>
               </ul>
             </div>
             <div className="card">
