@@ -1,34 +1,37 @@
-// app/lib/cache-config.ts
-export const cacheConfig = {
-  static: {
-    revalidate: 3600, // 1 hour
-    tags: ['static-data']
-  },
-  dynamic: {
-    revalidate: 60, // 1 minute
-    tags: ['dynamic-data']
-  },
-  api: {
-    revalidate: 0,
-    dynamic: 'force-dynamic'
-  }
-} as const;
+// lib/analytics/performance.ts
+import { unstable_cache } from 'next/cache'
+import { headers } from 'next/headers'
 
-// app/components/server-data.tsx
-import { unstable_cache } from 'next/cache';
-
-const getCachedData = unstable_cache(
-  async (id: string) => {
-    const res = await fetch(`${API_URL}/data/${id}`, {
-      next: { revalidate: 3600, tags: [`data-${id}`] }
-    });
-    return res.json();
-  },
-  ['data-cache'],
-  { revalidate: 3600, tags: ['data-cache'] }
-);
-
-export async function ServerData({ id }: { id: string }) {
-  const data = await getCachedData(id);
-  return <DataComponent data={data} />;
+export interface PerformanceMetrics {
+  ttfb: number
+  fcp: number
+  lcp: number
+  cls: number
+  fid: number
+  navigationType: string
 }
+
+export const trackPerformance = unstable_cache(
+  async (route: string, metrics: Partial<PerformanceMetrics>) => {
+    const headersList = await headers()
+    const userAgent = headersList.get('user-agent') || ''
+    
+    // Log to your analytics service
+    await fetch('https://api.analytics.com/performance', {
+      method: 'POST',
+      body: JSON.stringify({
+        route,
+        metrics,
+        userAgent,
+        timestamp: new Date().toISOString(),
+      }),
+    })
+    
+    return true
+  },
+  ['performance-tracking'],
+  {
+    revalidate: 3600, // Cache for 1 hour
+    tags: ['analytics'],
+  }
+)
