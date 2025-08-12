@@ -1,20 +1,19 @@
-// app/layout.tsx
-export const experimental_ppr = true;
+// app/middleware.ts
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
 
-// app/posts/[id]/page.tsx
-import { Suspense } from 'react';
-import { PostSkeleton } from '@/components/skeletons';
-
-export default async function PostPage({ params }: { params: { id: string } }) {
-  return (
-    <div className="container mx-auto">
-      <Suspense fallback={<PostSkeleton />}>
-        <PostContent id={params.id} />
-      </Suspense>
-      
-      <Suspense fallback={<CommentsSkeleton />}>
-        <Comments postId={params.id} />
-      </Suspense>
-    </div>
-  );
+export function middleware(request: NextRequest) {
+  const response = NextResponse.next()
+  
+  // Add performance headers
+  response.headers.set('X-Content-Type-Options', 'nosniff')
+  response.headers.set('X-Frame-Options', 'DENY')
+  response.headers.set('X-XSS-Protection', '1; mode=block')
+  
+  // Cache static assets
+  if (request.nextpathname.startsWith('/_next/static/')) {
+    response.headers.set('Cache-Control', 'public, max-age=31536000, immutable')
+  }
+  
+  return response
 }
