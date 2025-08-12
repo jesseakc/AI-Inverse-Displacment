@@ -1,13 +1,7 @@
 {
   "agent": "nextjs-developer",
-  "status": "implementing",
-  "progress": {
-    "routes_created": 8,
-    "api_endpoints": 4,
-    "lighthouse_score": 92,
-    "build_time": "38s",
-    "bundle_size": "285kb",
-    "components_built": 24,
-    "images_optimized": 18
+  "request_type": "get_nextjs_context",
+  "payload": {
+    "query": "Analyzing project directory - appears to be empty. Need to establish Next.js 14+ project requirements: application type, rendering strategy, data architecture, SEO targets, and deployment plan for optimal performance."
   }
 }
