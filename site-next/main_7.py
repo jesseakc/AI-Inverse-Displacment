@@ -1,27 +1,32 @@
-// app/components/structured-data.tsx
-import Script from 'next/script';
+// lib/monitoring/sentry.ts
+import * as Sentry from '@sentry/nextjs'
 
-export function ArticleSchema({ post }: { post: Post }) {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.excerpt,
-    image: post.image,
-    author: {
-      '@type': 'Person',
-      name: post.author.name,
-      url: post.author.url,
-    },
-    datePublished: post.publishedAt,
-    dateModified: post.updatedAt,
-  };
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  environment: process.env.NODE_ENV,
+  tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
+  integrations: [
+    new Sentry.Integrations.Http({ tracing: true }),
+    new Sentry.Integrations.Prisma({ client: true }),
+  ],
+})
 
+// app/global-error.tsx
+'use client'
+
+export default function GlobalError({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string }
+  reset: () => void
+}) {
   return (
-    <Script
-      id="article-schema"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+    <html>
+      <body>
+        <h2>Something went wrong!</h2>
+        <button onClick={() => reset()}>Try again</button>
+      </body>
+    </html>
+  )
 }
