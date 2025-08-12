@@ -1,24 +1,14 @@
-// lib/analytics.ts
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+// lib/monitoring/vercel-analytics.tsx
+'use client'
 
-export function AnalyticsProvider() {
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+
+export function VercelMonitoring() {
   return (
     <>
       <Analytics />
       <SpeedInsights />
     </>
-  );
-}
-
-// lib/web-vitals.ts
-export function reportWebVitals(metric: any) {
-  if (process.env.NODE_ENV !== 'production') return;
-  
-  // Send to analytics
-  analytics.track('Web Vital', {
-    name: metric.name,
-    value: metric.value,
-    rating: metric.rating,
-  });
+  )
 }
