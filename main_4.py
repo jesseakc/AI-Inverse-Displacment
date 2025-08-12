@@ -1,0 +1,1 @@
+Your Next.js migration is now initialized and ready for content migration from your single-page website!
