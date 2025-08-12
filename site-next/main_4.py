@@ -1,21 +1,59 @@
-// components/optimistic-todo.tsx
-'use client';
-import { useOptimistic, startTransition } from 'react';
-import { addTodo } from '@/actions/todos';
+// components/ui/optimized-image.tsx
+import Image from 'next/image'
+import { getPlaiceholder } from 'plaiceholder'
 
-export function TodoList({ initialTodos }: { initialTodos: Todo[] }) {
-  const [todos, setTodos] = useOptimistic(initialTodos, 
-    (state, newTodo: Todo) => [...state, newTodo]
-  );
+interface OptimizedImageProps {
+  src: string
+  alt: string
+  width?: number
+  height?: number
+  fill?: boolean
+  className?: string
+  priority?: boolean
+  quality?: number
+}
 
+export async function getOptimizedImage(src: string) {
+  const buffer = await fetch(src).then(async (res) =>
+    Buffer.from(await res.arrayBuffer())
+  )
+  
+  const {
+    base64,
+    img: { width, height, type },
+  } = await getPlaiceholder(buffer, { size: 10 })
+  
+  return {
+    base64,
+    width,
+    height,
+    type,
+  }
+}
+
+export function OptimizedImage({
+  src,
+  alt,
+  width,
+  height,
+  fill,
+  className,
+  priority = false,
+  quality = 75,
+}: OptimizedImageProps) {
   return (
-    <form action={async (formData) => {
-      const todo = { id: Date.now(), text: formData.get('text'), completed: false };
-      startTransition(() => setTodos(todo));
-      await addTodo(formData);
-    }}>
-      <input name="text" required />
-      <button type="submit">Add Todo</button>
-    </form>
-  );
+    <Image
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      fill={fill}
+      className={className}
+      priority={priority}
+      quality={quality}
+      placeholder="blur"
+      blurDataURL={base64}
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+    />
+  )
 }
