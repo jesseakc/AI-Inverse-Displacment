@@ -1,7 +1,13 @@
 {
-  "agent": "nextjs-developer",
-  "request_type": "get_nextjs_context",
-  "payload": {
-    "query": "Analyzing project directory - appears to be empty. Need to establish Next.js 14+ project requirements: application type, rendering strategy, data architecture, SEO targets, and deployment plan for optimal performance."
+  "project_type": "full-stack web application",
+  "rendering_strategy": "hybrid (SSG + ISR + server components)",
+  "data_sources": ["PostgreSQL", "Redis", "Edge storage"],
+  "seo_requirements": ["Perfect Lighthouse scores", "Dynamic meta tags", "Sitemap generation", "Schema markup"],
+  "deployment_target": "Vercel with edge runtime",
+  "performance_targets": {
+    "lighthouse_score": 95,
+    "ttfb": "< 200ms",
+    "fcp": "< 1s",
+    "lcp": "< 2.5s"
   }
 }
