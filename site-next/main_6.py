@@ -1,53 +1,79 @@
-// app/posts/[slug]/page.tsx
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+// app/actions/posts.ts
+'use server'
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await getPost(params.slug);
+import { revalidatePath, revalidateTag } from 'next/cache'
+import { z } from 'zod'
+import { auth } from '@/lib/auth'
+
+const createPostSchema = z.object({
+  title: z.string().min(5).max(100),
+  content: z.string().min(50),
+  published: z.boolean().default(false),
+  tags: z.array(z.string()).optional(),
+})
+
+export type CreatePostInput = z.infer<typeof createPostSchema>
+
+export async function createPost(input: CreatePostInput) {
+  const session = await auth()
   
-  if (!post) notFound();
+  if (!session?.user?.id) {
+    throw new Error('Unauthorized')
+  }
+  
+  const validatedData = createPostSchema.parse(input)
+  
+  const response = await fetch(`${process.env.API_URL}/posts`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${session.accessToken}`,
+    },
+    body: JSON.stringify({
+      ...validatedData,
+      authorId: session.user.id,
+    }),
+  })
+  
+  if (!response.ok) {
+    throw new Error('Failed to create post')
+  }
+  
+  const post = await response.json()
+  
+  // Revalidate cache
+  revalidatePath('/posts')
+  revalidateTag('posts-list')
+  
+  return post
+}
 
-  return {
-    title: post.title,
-    description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      type: 'article',
-      publishedTime: post.publishedAt,
-      modifiedTime: post.updatedAt,
-      images: [{
-        url: post.ogImage,
-        width: 1200,
-        height: 630,
-        alt: post.title,
-      }],
-      authors: post.authors.map(a => a.name),
-      tags: post.tags,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
-      images: [post.ogImage],
-    },
-    alternates: {
-      canonical: `https://yourdomain.com/posts/${post.slug}`,
-      types: {
-        'application/rss+xml': 'https://yourdomain.com/feed.xml',
-        'application/atom+xml': 'https://yourdomain.com/atom.xml',
+// Optimistic update action
+export async function updatePostLikes(postId: string, increment: boolean) {
+  const session = await auth()
+  
+  if (!session?.user?.id) {
+    throw new Error('Unauthorized')
+  }
+  
+  // Optimistic update
+  revalidateTag(`post-${postId}`)
+  
+  const response = await fetch(
+    `${process.env.API_URL}/posts/${postId}/like`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${session.accessToken}`,
       },
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
-  };
+      body: JSON.stringify({ increment }),
+    }
+  )
+  
+  if (!response.ok) {
+    throw new Error('Failed to update like')
+  }
+  
+  return response.json()
 }
